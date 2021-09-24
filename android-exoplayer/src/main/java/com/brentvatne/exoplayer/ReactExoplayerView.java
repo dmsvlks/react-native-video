@@ -1240,9 +1240,8 @@ class ReactExoplayerView extends FrameLayout implements
 
     public void setMutedModifier(boolean muted) {
         this.muted = muted;
-        audioVolume = muted ? 0.f : 1.f;
         if (player != null) {
-            player.setVolume(audioVolume);
+            player.setVolume(muted ? 0.f : audioVolume);
         }
     }
 
